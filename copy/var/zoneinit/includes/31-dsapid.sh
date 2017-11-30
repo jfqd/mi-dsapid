@@ -2,7 +2,10 @@
 log "creating /data directory"
 
 if [[ ! -e /data ]]; then
-  mkdir /data
+  mkdir /data/files
+fi
+
+if [[ ! -e /data/files ]]; then
   mkdir /data/files
 fi
 
@@ -16,7 +19,7 @@ if [[ ! -e /data/config.json ]]; then
   "mount_ui": "/opt/dsapid/ui",
   "listen": {
     "http": {
-      "address": "0.0.0.0:80",
+      "address": "127.0.0.1:8080",
       "ssl": false
     }
   },
@@ -55,6 +58,8 @@ fi
 if [[ ! -e /data/users.json ]]; then
   log "creating initial users list and seed it with joyent uuids"
 
+  ADMIN_UPLOAD_TOKEN=$(mdata-get admin_upload_token)
+  
   cat > /data/users.json << EOF
 [
   {
@@ -62,6 +67,17 @@ if [[ ! -e /data/users.json ]]; then
     "name": "sdc",
     "type": "system",
     "provider": "joyent"
+  },
+  {
+    "uuid": "429694bc-c5a0-4263-9026-72299455f484",
+    "name": "admin",
+    "token": "${ADMIN_UPLOAD_TOKEN}",
+    "type": "user",
+    "roles": [
+      "s_dataset.upload",
+      "s_dataset.manage",
+      "s_dataset.admin"
+    ]
   },
   {
     "uuid": "684f7f60-5b38-11e2-8eae-6b88dd42e590",

@@ -12,6 +12,7 @@ echo "* Configuring image specific packages.";
 DSPID_VERSION='0.7.1'
 curl -L https://download.qutic.com/src/dsapid/dsapid-server-${DSPID_VERSION}.tar.bz2 | gtar xj -C /opt/dsapid/
 mv /opt/dsapid/dsapid-server-${DSPID_VERSION}/server-sunos /opt/dsapid/server
+chmod +x /opt/dsapid/server
 
 /usr/sbin/groupadd -g 5092 dsapid
 /usr/sbin/useradd -u 5092 -g dsapid -d /opt/dsapid -s /usr/bin/bash dsapid
@@ -24,8 +25,15 @@ fi
 
 svccfg import /root/dsapid.xml
 
+svcadm enable svc:/network/ipfilter:default
+
+echo "* Create nginx ssl folder"
+mkdir -p /opt/local/etc/nginx/ssl
+
 # Clean up
 echo "* Cleaning up."
+rm /root/dsapid.xml
+rm /opt/dsapid/dsapid-server-${DSPID_VERSION}
 
 # Prepare image for provisioning
 sm-prepare-image -y
