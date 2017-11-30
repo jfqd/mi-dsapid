@@ -33,7 +33,7 @@ mkdir -p /opt/local/etc/nginx/ssl
 # Clean up
 echo "* Cleaning up."
 rm /root/dsapid.xml
-rm /opt/dsapid/dsapid-server-${DSPID_VERSION}
+rm -rf /opt/dsapid/dsapid-server-${DSPID_VERSION}
 
 # Prepare image for provisioning
 sm-prepare-image -y

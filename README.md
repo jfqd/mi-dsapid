@@ -59,7 +59,7 @@ vmadm create << EOF
     "mail_adminaddr":        "report@example.com",
     "munin_master_allow":    "munin-master-ip",
     "admin_upload_token":    "your-secure-admin-token",
-    "nginx_ssl":             "certificat"
+    "nginx_ssl":             "certificat-with-encoded-linebreaks"
   }
 }
 EOF
