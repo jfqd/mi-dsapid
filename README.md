@@ -24,13 +24,13 @@ See [mi-qutic-base Readme](https://github.com/jfqd/mi-qutic-base/blob/master/REA
 The following sample can be used to create an image server.
 
 ```
-BASE_IMAGE_UUID=$(imgadm list | grep 'qutic-base-64' | tail -1 | awk '{ print $1 }')
+IMAGE_UUID=$(imgadm list | grep 'qutic-base-64' | tail -1 | awk '{ print $1 }')
 vmadm create << EOF
 {
   "brand":      "joyent",
-  "image_uuid": "$BASE_IMAGE_UUID",
+  "image_uuid": "$IMAGE_UUID",
   "alias":      "dsapid-server",
-  "hostname":   "base.example.com",
+  "hostname":   "dsapid.example.com",
   "dns_domain": "example.com",
   "resolvers": [
     "80.80.80.80",
@@ -53,8 +53,8 @@ vmadm create << EOF
   "customer_metadata": {
     "admin_authorized_keys": "your-long-key",
     "root_authorized_keys":  "your-long-key",
-    "mail_smarthost":        "mail.qutic.com",
-    "mail_auth_user":        "your-name@example.com",
+    "mail_smarthost":        "mail.example.com",
+    "mail_auth_user":        "you@example.com",
     "mail_auth_pass":        "smtp-account-password",
     "mail_adminaddr":        "report@example.com",
     "munin_master_allow":    "munin-master-ip",

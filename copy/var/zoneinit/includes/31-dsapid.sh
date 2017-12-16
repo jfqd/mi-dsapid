@@ -2,7 +2,7 @@
 log "creating /data directory"
 
 if [[ ! -e /data ]]; then
-  mkdir /data/files
+  mkdir /data
 fi
 
 if [[ ! -e /data/files ]]; then
