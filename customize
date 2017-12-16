@@ -23,7 +23,7 @@ if ! projects -l dsapid >/dev/null 2>&1; then
     -c "Dataset Image Server" dsapid
 fi
 
-svccfg import /root/dsapid.xml
+svccfg import /opt/local/lib/svc/manifest/dsapid.xml
 
 svcadm enable svc:/network/ipfilter:default
 
