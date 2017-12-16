@@ -59,7 +59,8 @@ vmadm create << EOF
     "mail_adminaddr":        "report@example.com",
     "munin_master_allow":    "munin-master-ip",
     "admin_upload_token":    "your-secure-admin-token",
-    "nginx_ssl":             "certificat-with-encoded-linebreaks"
+    "nginx_ssl":             "certificat-with-encoded-linebreaks",
+    "vfstab":                "storage.example.com:/export/smartos-images    -       /data    nfs     -       yes     rw,bg,intr"
   }
 }
 EOF

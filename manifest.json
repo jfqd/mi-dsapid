@@ -1,6 +1,6 @@
 {
   "name":         "dsapid",
-  "version":      "0.7.2",
+  "version":      "0.7.3",
   "description":  "A dataset server that mirrors one or more remote dataset servers",
   "organization": "qutic development",
   "brand":        "Instance",
@@ -21,6 +21,7 @@
     "ssh_host_dsa_key":      {"type": "text", "description": "private SSH dsa key for the host daemon"},
     "ssh_host_dsa_key.pub":  {"type": "text", "description": "public SSH dsa key for the host daemon"},
     "munin_master_allow":    {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"},
+    "vfstab":                {"type": "text", "description": "nfs mountpoint for vfstab-file"},
     "admin_upload_token":    {"type": "text", "description": "upload-token for the dsapid-server api"},
     "nginx_ssl":             {"type": "text", "description": "ssl certificate for dsapid web interface"}
   }
