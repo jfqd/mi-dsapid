@@ -5,7 +5,7 @@
   "organization": "qutic development",
   "brand":        "Instance",
   "homepage":     "https://github.com/jfqd/mi-dsapid",
-  "base":         "3bcad8e4-d5f5-11e7-b208-7b7dae1493a9",
+  "base":         "1d7b7f12-e25f-11e7-b7ed-c30dabac2a63",
   "customer_metadata": {
     "admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "root_authorized_keys":  {"type": "text", "description": "SSH public authorized key(s) for the root user"},
