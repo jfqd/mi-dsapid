@@ -103,7 +103,9 @@ fi
 
 log "force correct ownership of /data directory"
 
-chown -R dsapid:dsapid /data
+if [[ -z `/usr/sbin/mount | /usr/bin/grep "data"` ]]; then
+  chown -R dsapid:dsapid /data
+fi
 
 log "starting dsapid"
 
