@@ -33,7 +33,6 @@ mkdir -p /opt/local/etc/nginx/ssl
 # Clean up
 echo "* Cleaning up."
 touch /root/.bash_history
-rm /root/dsapid.xml
 rm -rf /opt/dsapid/dsapid-server-${DSPID_VERSION}
 rm /root/customize
 
