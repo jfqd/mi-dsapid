@@ -1,11 +1,11 @@
 {
   "name":         "dsapid",
-  "version":      "0.7.3",
+  "version":      "0.7.4",
   "description":  "A dataset server that mirrors one or more remote dataset servers",
   "organization": "qutic development",
   "brand":        "Instance",
   "homepage":     "https://github.com/jfqd/mi-dsapid",
-  "base":         "1d7b7f12-e25f-11e7-b7ed-c30dabac2a63",
+  "base":         "7463e66c-f2df-11e7-9910-c77edbdd6194",
   "customer_metadata": {
     "admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "root_authorized_keys":  {"type": "text", "description": "SSH public authorized key(s) for the root user"},
