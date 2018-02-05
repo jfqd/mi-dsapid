@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+# sleep a while
+sleep 20
+
+# are all volumes mounted?
+for MOUNTPOINT in $(/usr/bin/cat /etc/vfstab | /usr/bin/grep ' yes ' | /usr/bin/awk '{print $3}'); do
+  if [[ -z `/usr/sbin/mount | /usr/bin/grep "$MOUNTPOINT"` ]]; then
+    /usr/sbin/mount "$MOUNTPOINT"
+  fi
+done
+
+# first time fetch
+if [[ ! -f /opt/local/pkg/pkg-vulnerabilities ]]; then
+  /opt/local/sbin/pkg_admin fetch-pkg-vulnerabilities
+fi
+
+# restart dsapid to prevent bad gateway
+sleep 20
+/usr/sbin/svcadm restart dsapid
+
+# bye
+exit 0
