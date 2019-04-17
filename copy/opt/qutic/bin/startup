@@ -10,6 +10,9 @@ for MOUNTPOINT in $(/usr/bin/cat /etc/vfstab | /usr/bin/grep ' yes ' | /usr/bin/
   fi
 done
 
+# restore settings
+[[ -x /data/bin/restore ]] && /data/bin/restore
+
 # first time fetch
 if [[ ! -f /opt/local/pkg/pkg-vulnerabilities ]]; then
   /opt/local/sbin/pkg_admin fetch-pkg-vulnerabilities
