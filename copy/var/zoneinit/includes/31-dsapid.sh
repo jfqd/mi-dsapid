@@ -41,14 +41,6 @@ if [[ ! -e /data/config.json ]]; then
       "provider": "joyent",
       "source": "https://images.joyent.com/images",
       "delay": "24h"
-    },
-    {
-      "name": "datasets.at",
-      "active": false,
-      "type": "dsapi",
-      "provider": "community",
-      "source": "http://datasets.at/api/datasets",
-      "delay": "24h"
     }
   ]
 }
