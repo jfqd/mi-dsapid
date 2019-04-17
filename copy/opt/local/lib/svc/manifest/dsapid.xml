@@ -14,12 +14,14 @@
       <method_credential group='dsapid' user='dsapid' privileges='basic,net_privaddr'/>
       <method_environment>
         <envvar name='PATH' value='/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:/bin'/>
+        <envvar name='TMPDIR' value='/var/tmp'/>
       </method_environment>
     </method_context>
     <exec_method name='start' type='method' exec='/opt/dsapid/server -config=/data/config.json' timeout_seconds='60'>
       <method_context>
         <method_environment>
           <envvar name='PATH' value='/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin'/>
+          <envvar name='TMPDIR' value='/var/tmp'/>
         </method_environment>
       </method_context>
     </exec_method>
