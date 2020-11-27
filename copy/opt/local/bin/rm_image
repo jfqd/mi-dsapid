@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+rm -rf /data/files/$1
+svcadm restart svc:/application/dsapid:default
